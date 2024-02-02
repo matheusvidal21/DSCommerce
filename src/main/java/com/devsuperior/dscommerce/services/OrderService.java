@@ -11,7 +11,6 @@ import com.devsuperior.dscommerce.repositories.OrderRepository;
 import com.devsuperior.dscommerce.repositories.ProductRepository;
 import com.devsuperior.dscommerce.services.exceptions.ResourcesNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -28,11 +27,13 @@ public class OrderService {
     private OrderItemRepository orderItemRepository;
     @Autowired
     private UserService userService;
+    @Autowired
+    private AuthService authService;
 
-    @PreAuthorize("hasAnyRole('ROLE_ADMIN')")
     @Transactional(readOnly = true)
     public OrderDTO findById(Long id){
         Order order = repository.findById(id).orElseThrow(() -> new ResourcesNotFoundException("Recurso não encontrado"));
+        authService.validateSelfOrAdmin(order.getClient().getId());
         return new OrderDTO(order);
     }
 
