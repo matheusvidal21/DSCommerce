@@ -39,10 +39,7 @@ public class ProductDTO {
         description = entity.getDescription();
         price = entity.getPrice();
         imgUrl = entity.getImgUrl();
-        entity.getCategories().forEach(x -> categories.add(new CategoryDTO(x)));
-        /*for(Category category : entity.getCategories()){
-            categories.add(new CategoryDTO(category));
-        }*/
+        entity.getCategories().forEach(c -> categories.add(new CategoryDTO(c)));
     }
 
     public Long getId() {
