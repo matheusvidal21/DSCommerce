@@ -10,7 +10,7 @@
 </p>    
 
 <p align="center">
-  <img src="logo.png" alt="Logo DSCommerce" height="300">
+  <img src="docs/logo.png" alt="Logo DSCommerce" height="300">
 </p>
 
 # 🔍 Visão Geral
@@ -34,8 +34,8 @@ administrativa onde pode acessar os cadastros de usuários, produtos e categoria
 ## Índice
 - 🧠 [Modelo conceitual](#-modelo-conceitual)
 - 📑 [Casos de Uso](#-casos-de-uso)
-- 📁 [Estrutura de pacotes](#-estrutura-de-diretórios)
-- 💻 [Tecnologias utilizadas](#-técnicas-e-tecnologias-utilizadas)
+- 📁 [Estrutura de pacotes](#-estrutura-de-pacotes)
+- 💻 [Tecnologias utilizadas](#-tecnologias-utilizadas)
 - 🔧 [Como executar](#-como-executar)
 - 👥 [Autores](#-autores)
 
@@ -46,7 +46,7 @@ questões de histórico (se o preço do produto mudar no futuro, o preço do ite
 - Um usuário pode ter um ou mais "roles", que são os perfis de acesso deste usuário no sistema (client, admin).
 
 <p align="center">
-  <img src="modelo_conceitual.png" alt="Modelo conceitual">
+  <img src="docs/modelo_conceitual.png" alt="Modelo conceitual">
 </p>
 
  
@@ -70,7 +70,7 @@ O DSCommerce possui um conjunto de casos de uso que abrangem as principais funci
 | Reportar pedidos | Relatório de pedidos, podendo ser filtrados por data | Somente Admin |
 
 <p align="center">
-  <img src="caso_de_uso.png" alt="Caso de uso">
+  <img src="docs/caso_de_uso.png" alt="Caso de uso">
 </p>
 
 ## Atores
@@ -112,7 +112,7 @@ O DSCommerce possui um conjunto de casos de uso que abrangem as principais funci
 - Pós-condições: Carrinho de compras vazio
 - Visão geral: Salvar no sistema um pedido a partir dos dados do carrinho de compras informado.
 
-Para mais detalhamento dos casos de uso, consulte o documento de requisistos do sistema [clicando aqui](/docs/documento_de_requisitos.pdf).
+Para mais detalhamento dos casos de uso, consulte o documento de requisitos do sistema [clicando aqui](/docs/documento_de_requisitos.pdf).
 
 # 📁 Estrutura de pacotes
 - **/docs:** Contém a documentação do projeto;
