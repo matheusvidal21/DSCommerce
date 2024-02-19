@@ -1,16 +1,13 @@
 [![Finalizado](https://img.shields.io/badge/Status-Conclu%C3%ADdo-brightgreen)](https://github.com/imetropoledigital/trabalho-final-matheus-costa-vidal)
 
-
 <h1 align="center">DSCommerce</h1>
 
 <p align='center'> 
-    <img src="https://img.shields.io/badge/Spring_Boot  V2.7.3-F2F4F9?style=for-the-badge&logo=spring-boot"/>
+    <img src="https://img.shields.io/badge/Spring_Boot-F2F4F9?style=for-the-badge&logo=spring-boot"/>
     <img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white"/>  
     <img src="https://img.shields.io/badge/JWT-F2F4F9?style=for-the-badge&logo=JSON%20web%20tokens&logoColor=black"/>
     <img src="https://img.shields.io/badge/IntelliJ_IDEA-000000.svg?style=for-the-badge&logo=intellij-idea&logoColor=white"/>
 </p>    
-
-
 
 <p align="center">
   <img src="logo.png" alt="Logo DSCommerce" height="300">
@@ -35,14 +32,11 @@ administrativa onde pode acessar os cadastros de usuários, produtos e categoria
 <b>🖥️ Protótipos de tela:</b> [clique aqui](https://www.figma.com/file/ZrGNVNG0kZL6txDv4G8P6s/DSCommerce)
 
 ## Índice
-- 🔨 [Funcionalidades](#-funcionalidades)
-- 📁 [Estrutura de diretórios](#-estrutura-de-diretórios)
-- 📊 [Diagrama de classes](#-diagrama-de-classes)
-  - 📦 [Estrutura de pacotes](#-estrutura-de-pacotes)
-- 💻 [Técnicas e tecnologias utilizadas](#-técnicas-e-tecnologias-utilizadas)
-  - 🗃️ [Classes e Componentes JavaFX Utilizados](#%EF%B8%8F-classes-e-componentes-javafx-utilizados)
+- 🧠 [Modelo conceitual](#-modelo-conceitual)
+- 📑 [Casos de Uso](#-casos-de-uso)
+- 📁 [Estrutura de pacotes](#-estrutura-de-diretórios)
+- 💻 [Tecnologias utilizadas](#-técnicas-e-tecnologias-utilizadas)
 - 🔧 [Como executar](#-como-executar)
-- 📄 [Documentação](#-documentação)
 - 👥 [Autores](#-autores)
 
 # 🧠 Modelo conceitual
@@ -56,123 +50,95 @@ questões de histórico (se o preço do produto mudar no futuro, o preço do ite
 </p>
 
  
-# 🔨 Funcionalidades
+# 📑 Casos de Uso
+O DSCommerce possui um conjunto de casos de uso que abrangem as principais funcionalidades do sistema. Eles incluem desde a navegação no catálogo de produtos até as operações administrativas.
+
+## Visão geral
+| Caso de uso | Visão geral | Acesso |
+|----------|----------|----------|
+| Manter produtos | CRUD de produtos, podendo filtrar itens pelo nome | Somente Admin |
+| Manter categorias | CRUD de categorias, podendo filtrar itens pelo nome | Somente Admin |
+| Manter usuários | CRUD de usuários, podendo filtrar itens pelo nome | Somente Admin |
+| Gerenciar carrinho | Incluir e remover itens do carrinho de compras, bem como alterar as quantidades do produto em cada item | Público |
+| Consultar catálogo | Listar produtos disponíveis, podendo filtrar produtos pelo nome | Público |
+| Sign up | Cadastrar-se no sistema | Público |
+| Login | Efetuar login no sistema | Público |
+| Registrar pedido | Salvar no sistema um pedido a partir dos dados do carrinho de compras informado | Usuário logado |
+| Atualizar perfil | Atualizar o próprio cadastro | Usuário logado |
+| Visualizar pedidos | Visualizar os pedidos que o próprio usuário já fez | Usuário logado |
+| Registrar pagamento | Salvar no sistema os dados do pagamento de um pedido | Somente Admin |
+| Reportar pedidos | Relatório de pedidos, podendo ser filtrados por data | Somente Admin |
+
 <p align="center">
-  <img src="docs/imgs/telas.png" alt="Telas do programa">
+  <img src="caso_de_uso.png" alt="Caso de uso">
 </p>
 
-O projeto Home Manager, um aplicativo dedicado ao gerenciamento eficiente de tarefas domésticas, oferece uma série de funcionalidades para promover a organização e colaboração dentro de uma residência:
+## Atores
 
-- **Cadastro de casa: 🏠** É possível criar um usuário de toda a casa, cadastrando os membros que residem;
+| Ator | Responsabilidade | 
+|----------|----------|
+| Usuário anônimo | Pode realizar casos de uso das áreas públicas do sistema, como catálogo, carrinho de compras, login e sign up |
+| Cliente | Responsável por manter seu próprios dados pessoais no sistema, e pode visualizar histórico dos seus pedidos. Todo usuário cadastrado por padrão é um Cliente | 
+| Admin | Responsável por acessar a área administrativa do sistema com cadastros e relatórios. Admin também pode fazer tudo que Cliente faz | 
 
-- **Cadastro de membros: 👥** Os usuários podem criar perfis individuais, inserindo os nomes;
+## Detalhamento
+1. Consultar catálogo
+- Atores: Usuário anônimo, Cliente, Admin
+- Precondições: -
+- Pós-condições: -
+- Visão geral: Listar produtos disponíveis, podendo filtrar produtos pelo nome
 
-- **Gestão de tarefas diárias e semanais: 📅** Os membros podem cadastrar tarefas diárias e semanais, atribuindo responsabilidades específicas a cada membro da casa;
+2. Manter produtos
+- Atores: Admin
+- Precondições: Usuário logado
+- Pós-condições: -
+- Visão geral: CRUD de produtos, podendo filtrar itens pelo nome
 
-- **Distribuição justa de tarefas: ⚖️** Funcionalidade de distribuição equitativa de tarefas, garantindo que cada membro contribua de maneira justa para o funcionamento da casa. Tarefas são distribuídas aleatoriamente, levando em consideração o número de membros e a quantidade de tarefas disponíveis;
+4. Login
+- Atores: Usuário anônimo
+- Precondições: -
+- Pós-condições: Usuário logado
+- Visão geral: Efetuar login no sistema
 
-- **Acompanhamento do progresso: 📈** Os membros podem marcar as tarefas como concluídas, proporcionando uma visão clara do progresso das atividades domésticas.
+6. Gerenciar carrinho
+- Atores: Usuário anônimo
+- Precondições: -
+- Pós-condições: -
+- Visão geral: Incluir e remover itens do carrinho de compras, bem como alterar as quantidades do produto em cada item
 
-- **Estatísticas visuais 📊** Gráficos e estatísticas visuais auxiliam no monitoramento do desempenho individual e coletivo;
+6. Registrar pedido
+- Atores: Cliente
+- Precondições: Usuário logado, Carrinho de compras não vazio
+- Pós-condições: Carrinho de compras vazio
+- Visão geral: Salvar no sistema um pedido a partir dos dados do carrinho de compras informado.
 
-- **Edição de lista de tarefas semanais e diárias: 📝** 
-  - **Adicionar tarefas personalizadas:** Os usuários podem adicionar tarefas personalizadas à lista da casa;
-  - **Remover tarefas:** Permite aos usuários remover tarefas específicas que não são mais relevantes ou necessárias;
+Para mais detalhamento dos casos de uso, consulte o documento de requisistos do sistema [clicando aqui](/docs/documento_de_requisitos.pdf).
 
-- **Edição da lista de membros da casa: 👥** 
-  - **Adicionar novos membros:** Os usuários podem adicionar novos membros à lista, inserindo seus nomes para criar perfis individuais;
-  - **Remover membros** Permite remover membros que não residem mais na casa ou que não desejam mais fazer parte do grupo;
-
-- **Reiniciar a Semana: 🔄**
-  - **Resetar o progresso:** Opção para reiniciar o progresso de todas as tarefas da casa, marcando todas como "não realizadas";
-  - **Limpar tarefas dos membros:** Remove todas as tarefas atribuídas aos membros, começando uma nova semana do zero;
-
-- **Visualização de perfil individual: 👤** Oferece uma visualização personalizada para cada membro, permitindo que eles visualizem as tarefas atribuídas a si mesmos, marquem-nas como concluídas e acompanhem seu progresso por meio de uma barra de progresso.
-
-- **Visualização geral: 👀** O aplicativo oferece uma visualização geral das tarefas, permitindo que os usuários vejam rapidamente todas as tarefas da casa;
-
-- **Armazenamento em arquivo binário: 📁** Os dados da casa são armazenados em um arquivo binário, permitindo a recuperação dos dados para uso posterior;
-
-- **Carregamento de arquivo binário: ⬆️** Todos os usuários são carregados partir de um arquivo binário, recuperando o estado anterior da casa;
-
-- **Privacidade e Segurança: 🔐** Prioriza a segurança dos dados, garantindo que informações pessoais e atividades domésticas estejam protegidas.
-
-O Home Manager é uma solução abrangente para famílias e casas compartilhadas, oferecendo uma abordagem colaborativa para o gerenciamento de responsabilidades diárias. Transforme a gestão doméstica em uma experiência organizada e eficiente com o Home Manager.
-
-# 📁 Estrutura de diretórios
+# 📁 Estrutura de pacotes
 - **/docs:** Contém a documentação do projeto;
-- **/imgs:** Imagens utilizada para a documentação;
 - **/src:** Contém o código fonte do projeto;
-  - **/application:** Contém a classe principal da aplicação;
-  - **/controller:** Responsável por controladores da aplicação;
-  - **/event:** Gerencia eventos para comunicação entre controladores;
-  - **/model:** Contém os modelos (models) do projeto;
-  - **/repository:** Repositório envolvendo operações de armazenamento e recuperação de dados;
-- **/storage** Arquivo de dados salvo em binário (.dat) para recuperação;
+  - **/config:** Pacote com classes de configurações;
+      - **/customgrant:** Implementação de custom grant para autenticação;
+  - **/controllers:** Controladores da aplicação;
+      - **/handlers:** Manipuladores de requisição;
+  - **/dto:** Objetos de transferência de dados (DTO);
+  - **/entities:** Contém as entidades do projeto;
+  - **/entities:** Contém as projeções de entidades;
+  - **/repositories:** Repositórios para operações de banco de dados;
+  - **/services:** Serviços da aplicação;
+      - **/exceptions:** Exceções personalizadas;
 - **.gitignore:** Arquivo do Git para ignorar arquivos no controle de versão;
 - **README.md:** Documentação essencial do projeto em texto.
 
-# 📊 Diagrama de classes
-O diagrama de classes UML é uma representação visual da estrutura e das relações entre as classes em um projeto. Ele fornece uma visão geral da organização das classes, seus atributos e métodos, bem como as associações, heranças e dependências entre elas. Este diagrama é uma ferramenta poderosa para entender a arquitetura do sistema, identificar as principais entidades e suas interações, e facilitar o desenvolvimento, a manutenção e a comunicação entre os membros da equipe. Se você deseja explorar mais detalhes do diagrama de classes [clique aqui](docs/diagrama/diagrama.pdf) para ser redirecionado ao arquivo PDF correspondente.
-
-<p align="center">
-  <img src="docs/diagrama/diagrama.png" alt="Diagrama de Classes">
-</p>
-
-## 📦 Estrutura de pacotes
-
-1. [**`Pacote "application"`**](/HomeManager/src/main/java/br/com/homemanager/application)
-- `Program`: Esta classe representa o ponto de entrada do aplicativo, gerenciando a troca de telas e o início do aplicativo.
-
-2. [**`Pacote "controller"`**](/HomeManager/src/main/java/br/com/homemanager/controller)
-- `EditMemberListController`: Controlador responsável pela lógica para editar a lista de membros.
-- `EditTaskListController`: Controlador para editar a lista de tarefas.
-- `HomePageController`: Controlador principal que gerencia a página inicial do aplicativo.
-- `LoginController`: Controlador responsável pela lógica de autenticação de usuários.
-- `MemberPageController`: Controlador para a página individual de cada membro.
-- `SingupController`: Controlador responsável pela lógica de cadastro de novos usuários.
-
-3. [**`Pacote "event"`**](/HomeManager/src/main/java/br/com/homemanager/event)
-- `EventManager`: Gerenciador de eventos para controlar e distribuir eventos na aplicação.
-- `EditMemberListEvent`: Evento relacionado à página de edição da lista de membros.
-- `EditTaskListEvent`: Evento para página de edição da lista de tarefas.
-- `ShowAllTaskEvent`: Evento para exibir todas as tarefas.
-- `ShowMemberButtonsEvent`: Evento para mostrar os botões dos membros.
-- `UpdateHomeProgressEvent`: Evento para atualizar o progresso da página inicial.
-- `UpdateProgressEvent`: Evento para atualizar o progresso do membro.
-
-4. [**`Pacote "model"`**](/HomeManager/src/main/java/br/com/homemanager/model)
-- `Home`: Classe que modela a entidade casa, gerenciando tarefas e membros.
-- `Member`: Representação de um membro da casa.
-- `Session`: Representa a sessão do usuário atual.
-- `Task`: Classe abstrata que representa uma tarefa genérica.
-- `WeeklyTask`: Representação de uma tarefa semanal.
-- `DailyTask`: Representação de uma tarefa diária.
-
-5. [**`Pacote "enums"`**](/HomeManager/src/main/java/br/com/homemanager/model/enums)
-- `TaskStatus`: Enumeração que define o status das tarefas (concluído ou não concluído).
-
-6. [**`Pacote "repository"`**](/HomeManager/src/main/java/br/com/homemanager/repository)
-- `HomeRepository`: Repositório responsável pelo armazenamento e recuperação de dados da casa, incluindo membros e tarefas.
-
-# 💻 Técnicas e tecnologias utilizadas
-
-<div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center;">
-  <img src="docs/imgs/java.png" alt="Logo Java" height="70" style="margin-right: 20px;">
-  <img src="docs/imgs/javafx.png" alt="Logo javafx" height="70" style="margin-right: 20px;">
-  <img src="docs/imgs/javadoc.png" alt="Logo Javadoc" height="50" style="margin-right: 20px;">
-  <img src="docs/imgs/maven.png" alt="Logo Maven" height="50" style="margin-right: 20px;">
-  <img src="docs/imgs/scenebuilder.png" alt="Logo SceneBuilder" height="70" style="margin-right: 20px;">
-  <img src="docs/imgs/github.png" alt="Logo GitHub" height="70" style="margin-right: 20px;">
-  <img src="docs/imgs/git.png" alt="Logo Git" height="70" style="margin-right: 20px;">
-  <img src="docs/imgs/intellij.png" alt="Logo Inlellij" height="70" style="margin-right: 20px;">
-  <img src="docs/imgs/uml.png" alt="Logo UML" height="70" style="margin-right: 20px;">
-  <img src="docs/imgs/estrutura-de-dados.png" alt="Logo Estrutura de Dados" height="70" style="margin-right: 20px;">
-  <img src="docs/imgs/design-patterns.png" alt="Logo Design Patterns" height="70" style="margin-right: 20px;">
-  <img src="docs/imgs/persistencia-dados.png" alt="Logo Persistência de Dados" height="70" style="margin-right: 20px;">
-  <img src="docs/imgs/mvc.png" alt="Logo MVC" height="70" style="margin-right: 20px;">
-</div>
-
+# 💻 Tecnologias utilizadas
+![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white)
+![Spring](https://img.shields.io/badge/spring-%236DB33F.svg?style=for-the-badge&logo=spring&logoColor=white)
+![Spring Security](https://img.shields.io/badge/Spring_Security-6DB33F?style=for-the-badge&logo=Spring-Security&logoColor=white)
+![JWT](https://img.shields.io/badge/JWT-black?style=for-the-badge&logo=JSON%20web%20tokens)
+![IntelliJ IDEA](https://img.shields.io/badge/IntelliJIDEA-000000.svg?style=for-the-badge&logo=intellij-idea&logoColor=white)
+![Apache Maven](https://img.shields.io/badge/Apache%20Maven-C71A36?style=for-the-badge&logo=Apache%20Maven&logoColor=white)
+![Postman](https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white)
+![Hibernate](https://img.shields.io/badge/Hibernate-59666C?style=for-the-badge&logo=Hibernate&logoColor=white)
 
 # 🔧 Como executar?
 O aplicativo utiliza o Maven para facilitar o processo de compilação e execução. Siga as etapas abaixo para compilar e executar o projeto:
@@ -200,23 +166,6 @@ Isso iniciará o processo de compilação, baixando as dependências do Maven e 
 ## Observações
 - Certifique-se de que o arquivo pom.xml está presente no diretório raiz do projeto antes de executar o comando Maven.
 - Ao finalizar a compilação, o aplicativo JavaFX será iniciado automaticamente.
-
-## 👤 Usuário de exemplo para teste
-Para facilitar os testes e a exploração do sistema, um usuário de exemplo foi criado com membros e tarefas pré-cadastrados. Use as seguintes credenciais para acessar:
-
-- Username: familiagomes
-- Password: admin
-
-Este usuário já possui membros na lista e tarefas atribuídas. Sinta-se à vontade para explorar as funcionalidades do sistema utilizando estas credenciais de exemplo.
-
-## Em caso de dúvidas
-Se você encontrar qualquer problema ou precisar de mais informações sobre como compilar o projeto, consulte a documentação do Maven ou entre em contato com a equipe de desenvolvimento.
-
-- O uso do Maven simplifica o processo de compilação e gestão de dependências, proporcionando uma experiência mais eficiente no desenvolvimento do projeto Home Manager.
-
-# 📄 Documentação
-Toda a documentação referente ao projeto pode ser encontrada na pasta [docs/documentação](docs/documentação). Se você deseja visualizar a documentação do código-fonte, você pode acessar essa pasta para encontrar informações detalhadas sobre classes, métodos e funcionalidades implementadas.
-- Para navegar pela documentação, basta abrir o arquivo `index.html` ou outros arquivos fornecidos na pasta da documentação usando um navegador da web.
 
 # 👥 Autores
 
