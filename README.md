@@ -37,7 +37,8 @@ administrativa onde pode acessar os cadastros de usuários, produtos e categoria
 - 📁 [Estrutura de pacotes](#-estrutura-de-pacotes)
 - 💻 [Tecnologias utilizadas](#-tecnologias-utilizadas)
 - 🔧 [Como executar](#-como-executar)
-- 👥 [Autores](#-autores)
+- 🛠️ [Testando a API com o Postman](#-testando-a-api-com-o-postman)
+- 👥 [Autor](#-autor)
 
 # 🧠 Modelo conceitual
 - Este é o modelo conceitual do sistema DSCommerce. Considerações: Cada item de pedido (OrderItem) corresponde a um produto no pedido, com uma quantidade. Sendo que o preço também é armazenado no item de pedido por
@@ -141,33 +142,51 @@ Para mais detalhamento dos casos de uso, consulte o documento de requisitos do s
 ![Hibernate](https://img.shields.io/badge/Hibernate-59666C?style=for-the-badge&logo=Hibernate&logoColor=white)
 
 # 🔧 Como executar?
-O aplicativo utiliza o Maven para facilitar o processo de compilação e execução. Siga as etapas abaixo para compilar e executar o projeto:
+Segue abaixo as instruções para executar o projeto:
 
 ## Pré-requisitos
-Certifique-se de ter o Maven instalado em seu sistema antes de prosseguir.
+- Certifique-se de ter o Java JDK instalado na sua máquina
+- Instale o IntelliJ IDEA ou outra IDE de sua preferência para desenvolvimento Java
+- É necessário ter o Maven instalado em sua máquina
 
-### Passo 1: Obtenha o código-fonte
-Clone o repositório do projeto em seu ambiente local ou faça o download dos arquivos fonte em um diretório de sua escolha.
-
-### Passo 2: Navegue para o diretório do aplicativo
-Abra um terminal e navegue até o diretório raiz do projeto usando o comando cd:<br>
+### Passo 1: Clonar o Repositório
 ```
-cd caminho/para/o/diretorio/do/projeto/HomeManager
+git clone git@github.com:matheusvidal21/DSCommerce.git
 ```
 
-### Passo 3: Compile e Execute o aplicativo
-Execute o seguinte comando para compilar o aplicativo: <br>
-```
-mvn clean javafx:run
-```
-<br>
-Isso iniciará o processo de compilação, baixando as dependências do Maven e executando o aplicativo JavaFX.
+### Passo 2: Importar o Projeto
+- Abra o Intellij IDEA ou sua IDE de preferência
+- Selecione "Open" no menu e escolha o diretório do projeto clonado
+- Aguarde até que o IntelliJ configure o projeto
 
-## Observações
-- Certifique-se de que o arquivo pom.xml está presente no diretório raiz do projeto antes de executar o comando Maven.
-- Ao finalizar a compilação, o aplicativo JavaFX será iniciado automaticamente.
+### Passo 3: Configuração
+- Verifique se todas as dependências foram carregadas corretamente pelo Maven 
 
-# 👥 Autores
+### Passo 4: Execução
+- Localize a classe principal da aplicação `DscommerceApplication`(localizado em src/main/java/com/devsuperior/dscommerce) e execute-a
+- Ou, se preferir utilizar o Maven, você pode executar o projeto a partir da linha de comando:
+```
+mvn spring-boot:run
+```
+
+### Passo 5: Acesso à Aplicação
+- Uma vez que a aplicação esteja em execução, você pode interagir com ela consumindo os endpoints da API. Para isso, recomenda-se o uso de ferramentas como o Postman, que permite fazer requisições HTTP de forma fácil e eficiente
+- Se preferir, também é possível acessá-la através do navegador web, digitando o endereço <b> `http://localhost:8080` na barra de endereços
+
+# 🛠️ Testando a API com o Postman
+Para facilitar o teste dos endpoints da API, disponibilizei uma coleção no Postman contendo todas as requisições disponíveis. Siga os passos abaixo para importar a coleção e começar a testar:
+1. Baixe e Instale o Postman
+- Se você ainda não tem o Postman instalado, você pode baixá-lo e instalá-lo gratuitamente a partir do [site oficial](https://www.postman.com/downloads/)
+2. Importe a coleção
+- Após instalar o Postman, faça o download da coleção que disponibilizei. Você pode encontrá-la [aqui](docs/collection/DSCommerce.postman_collection.json)
+3. Importe a coleção no Postman
+- Abra o Postman e clique no botão "File" localizado no canto superior esquerdo da interface. Em seguida, selecione a opção "Import" e depois localize o arquivo e selecione-o
+4. Teste os Endpoints
+- Agora que a coleção foi importada com sucesso, você verá todas as requisições listadas no painel esquerdo do Postman. Basta selecionar a requisição desejada e clicar em "Send" para testá-la.
+
+Com a coleção disponível no Postman, você poderá testar facilmente todos os endpoints da sua API e garantir que ela esteja funcionando corretamente.
+
+# 👥 Autor
 
 | [<img src="https://avatars.githubusercontent.com/u/102569695?s=400&u=f20bbb53cc46ec2bae01f8d60a28492bfdccbdd5&v=4" width=115><br><sub>Matheus Vidal</sub>](https://github.com/matheusvidal21) |
 | :---: |
