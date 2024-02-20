@@ -13,6 +13,8 @@
   <img src="docs/logo.png" alt="Logo DSCommerce" height="300">
 </p>
 
+[Testando endpoints.webm](https://github.com/matheusvidal21/DSCommerce/assets/102569695/8dc7beb7-7542-48c1-a731-dda4f41c7507)
+
 # 🔍 Visão Geral
 <b>O sistema deve manter um cadastro de usuário, produtos e suas categorias.</b> 
 - Cada usuário possui nome, email, telefone, data de nascimento e uma senha de acesso.
@@ -28,6 +30,7 @@ de compras. O usuário pode incluir e remover itens do carrinho de compra, bem c
 Quando o usuário paga por um pedido, o instante do pagamento deve ser registrado. Os usuários do sistema podem ser clientes ou administradores, sendo que todo usuário cadastrado por padrão é cliente. Usuários não identificados podem
 se cadastrar no sistema, navegar no catálogo de produtos e no carrinho de compras. Clientes podem atualizar seu cadastro no sistema, registrar pedidos e visualizar seus próprios pedidos. Usuários administradores tem acesso à área
 administrativa onde pode acessar os cadastros de usuários, produtos e categorias.
+
 
 <b>🖥️ Protótipos de tela:</b> [clique aqui](https://www.figma.com/file/ZrGNVNG0kZL6txDv4G8P6s/DSCommerce)
 
