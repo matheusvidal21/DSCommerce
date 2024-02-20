@@ -37,7 +37,7 @@ administrativa onde pode acessar os cadastros de usuários, produtos e categoria
 - 📁 [Estrutura de pacotes](#-estrutura-de-pacotes)
 - 💻 [Tecnologias utilizadas](#-tecnologias-utilizadas)
 - 🔧 [Como executar](#-como-executar)
-- 🛠️ [Testando a API com o Postman](#-testando-a-api-com-o-postman)
+- 🛠️ [Testando a API com o Postman](#%EF%B8%8F-testando-a-api-com-o-postman)
 - 👥 [Autor](#-autor)
 
 # 🧠 Modelo conceitual
