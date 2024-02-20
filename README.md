@@ -174,16 +174,18 @@ mvn spring-boot:run
 - Se preferir, também é possível acessá-la através do navegador web, digitando o endereço <b> `http://localhost:8080` na barra de endereços
 
 # 🛠️ Testando a API com o Postman
-Para facilitar o teste dos endpoints da API, disponibilizei uma coleção no Postman contendo todas as requisições disponíveis. Siga os passos abaixo para importar a coleção e começar a testar:
+Para facilitar o teste dos endpoints da API, disponibilizei uma coleção e um ambiente (environment) no Postman contendo todas as requisições disponíveis. Siga os passos abaixo para importar a coleção e começar a testar:
 1. Baixe e Instale o Postman
 - Se você ainda não tem o Postman instalado, você pode baixá-lo e instalá-lo gratuitamente a partir do [site oficial](https://www.postman.com/downloads/)
-2. Importe a coleção
-- Após instalar o Postman, faça o download da coleção que disponibilizei. Você pode encontrá-la [aqui](docs/collection/DSCommerce.postman_collection.json)
-3. Importe a coleção no Postman
-- Abra o Postman e clique no botão "File" localizado no canto superior esquerdo da interface. Em seguida, selecione a opção "Import" e depois localize o arquivo e selecione-o
+2. Importe a collection e o environment
+- Após instalar o Postman, faça o download da coleção que disponibilizei. Você pode encontrá-la [aqui](docs/postman/DSCommerce.postman_collection.json)
+- Também faça o download do ambiente (environment) localizado [aqui](DSCommerce%20auth.postman_environment.json)
+3. Importe no Postman
+- Abra o Postman e clique no botão "File" localizado no canto superior esquerdo da interface. Em seguida, selecione a opção "Import" e depois localize os dois arquivos e selecione-os
 4. Teste os Endpoints
-- Agora que a coleção foi importada com sucesso, você verá todas as requisições listadas no painel esquerdo do Postman. Basta selecionar a requisição desejada e clicar em "Send" para testá-la.
-
+- Agora que a coleção foi importada com sucesso, você verá todas as requisições listadas no painel esquerdo do Postman. Basta selecionar a requisição desejada e clicar em "Send" para testá-la
+- Na parte superior direita do Postman, você verá um dropdown com a lista de environments. Selecione o environment recém-importado
+  
 Com a coleção disponível no Postman, você poderá testar facilmente todos os endpoints da sua API e garantir que ela esteja funcionando corretamente.
 
 # 👥 Autor
