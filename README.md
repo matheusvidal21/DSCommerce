@@ -179,7 +179,7 @@ Para facilitar o teste dos endpoints da API, disponibilizei uma coleção e um a
 - Se você ainda não tem o Postman instalado, você pode baixá-lo e instalá-lo gratuitamente a partir do [site oficial](https://www.postman.com/downloads/)
 2. Importe a collection e o environment
 - Após instalar o Postman, faça o download da coleção que disponibilizei. Você pode encontrá-la [aqui](docs/postman/DSCommerce.postman_collection.json)
-- Também faça o download do ambiente (environment) localizado [aqui](DSCommerce%20auth.postman_environment.json)
+- Também faça o download do ambiente (environment) localizado [aqui](docs/postman/DSCommerce%20auth.postman_environment.json)
 3. Importe no Postman
 - Abra o Postman e clique no botão "File" localizado no canto superior esquerdo da interface. Em seguida, selecione a opção "Import" e depois localize os dois arquivos e selecione-os
 4. Teste os Endpoints
