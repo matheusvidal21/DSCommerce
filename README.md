@@ -1,4 +1,4 @@
-[![Finalizado](https://img.shields.io/badge/Status-Conclu%C3%ADdo-brightgreen)](https://github.com/imetropoledigital/trabalho-final-matheus-costa-vidal)
+[![Finalizado](https://img.shields.io/badge/Status-Conclu%C3%ADdo-brightgreen)](https://github.com/matheusvidal21/DSCommerce)
 
 <h1 align="center">DSCommerce</h1>
 
